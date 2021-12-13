@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="?attr/actionModeCloseDrawable"
+            android:background="@null"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="18dp"
+            android:contentDescription="@string/back_button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings"
+            android:textSize="25sp"
+            android:paddingStart="10dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/text_choose_mod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/choose_mod_text"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_settings"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/background_spinners"
+        android:entries="@array/mode_names"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_choose_mod"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/text_wall_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/wall_width"
+        app:layout_constraintTop_toBottomOf="@id/spinner"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <SeekBar
+        android:id="@+id/seekbar_walls"
+        android:thumbTint="#FF5722"
+        android:progressTint="#FF5722"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_wall_width"
+        android:max="10"
+        android:min="0"
+        android:progress="0"
+        />
+
+    <TextView
+        android:id="@+id/text_erase_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/erase_width_text"
+        app:layout_constraintTop_toBottomOf="@id/seekbar_walls"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <SeekBar
+        android:id="@+id/seekbar_eraser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:thumbTint="#FF5722"
+        android:progressTint="#FF5722"
+        android:padding="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_erase_width"
+        android:max="10"
+        android:min="0"
+        android:progress="0"
+        />
+
+    <TextView
+        android:id="@+id/text_choose_alg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/choose_alg_text"
+        app:layout_constraintTop_toBottomOf="@id/seekbar_eraser"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Spinner
+        android:id="@+id/spinner_alg"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_spinners"
+        android:entries="@array/alg_names"
+
+        android:padding="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_choose_alg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
